@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Uploads</title>
+    </head>
+
+    <body>
+        <h1>Result</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %} <br>
+        <img src="{{ url_for('display_image', filename=image) }}" alt="" width="500" height="300"> <br>
+        <a href="{{ url_for('index') }}">back</a>
+    </body>
+</html>
